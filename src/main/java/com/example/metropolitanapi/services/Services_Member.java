@@ -28,4 +28,9 @@ public class Services_Member {
         return Flux.fromIterable(memberRepository.getMember(id));
     }
 
+    public String member_insert(int id_member,String name_member,String dni_member, String city_member) {
+        String insert = spaceRepository.spaces_insert(id_member,name_member,dni_member,city_member);
+        return insert;
+    }
+
 }
