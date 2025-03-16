@@ -55,12 +55,17 @@ public class Controller_Member {
             return ResponseEntity.badRequest().body(errors);
         }
         Map<String, String> response = new HashMap<>();
-        logger.info(String.valueOf(input.getId_member()));
-        logger.info(input.getName_member());
-        logger.info(String.valueOf(input.getDni_member()));
-        logger.info(input.getCity_member());
         String json_Activity_Member = u.convertListToJson(input.getActivity_Member());
         String resultado = memberService.member_insert(input.getName_member(), String.valueOf(input.getDni_member()), input.getCity_member(), json_Activity_Member, input.getId_member());
+        response.put("message", resultado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+
+    @GetMapping("/member_delete/{id}")
+    public ResponseEntity<Map<String, String>>delete_member(@PathVariable("id") int id) {
+        Map<String, String> response = new HashMap<>();
+        String resultado = memberService.member_delete(id);
         response.put("message", resultado);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

@@ -1,0 +1,30 @@
+Crear Spaces
+URL http://localhost:8080/jacidi/create_spaces
+Metodo:Post
+{
+            "name": "test5555551",
+            "description": "test99999"
+
+}
+
+Consulta un Spaces
+http://localhost:8080/jacidi/spaces/1
+Metodo:Get
+
+Consulta todos los Spaces
+http://localhost:8080/jacidi/spaces
+Metodo:Get
+
+Eliminar Spaces
+URL:http://localhost:8080/jacidi/spaces_delete/1
+Metodo:Get
+
+Actualizar Spaces
+Metodo Post
+URL:http://localhost:8080/jacidi/update_spaces
+{
+            "id":8
+            "name": "test5555551",
+            "description": "test99999"
+
+}

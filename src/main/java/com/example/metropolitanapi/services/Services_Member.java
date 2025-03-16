@@ -33,4 +33,9 @@ public class Services_Member {
         return insert;
     }
 
+    public String member_delete(int id) {
+        String delete = memberRepository.member_delete(id);
+        return delete;
+    }
+
 }

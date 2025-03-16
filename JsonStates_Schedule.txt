@@ -1,0 +1,26 @@
+Crear States_Schedule
+URL http://localhost:8080/jacidi/create_states_schedule
+Metodo:Post
+{
+            "name": "test5555551"
+}
+
+Consulta un States_Schedule
+http://localhost:8080/jacidi/states_schedule_id/1
+Metodo:Get
+
+Consulta todos los States_Schedule
+http://localhost:8080/jacidi/states_schedules
+Metodo:Get
+
+Eliminar States_Schedule
+URL:http://localhost:8080/jacidi/states_schedule_delete/1
+Metodo:Get
+
+Actualizar States_Schedule
+Metodo Post
+URL:http://localhost:8080/jacidi/update_states_schedule
+{
+            "id":13,
+            "name": "test5555551"
+}

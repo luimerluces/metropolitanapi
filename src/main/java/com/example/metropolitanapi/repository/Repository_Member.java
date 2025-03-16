@@ -1,9 +1,11 @@
 package com.example.metropolitanapi.repository;
+
 import com.example.metropolitanapi.output.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ public class Repository_Member {
 
     public List<Member_Out> getMember(int id) {
         String sql = "SELECT * FROM public.get_member_id(?)";
-        return jdbcTemplate.query(sql, new Repository_Member.MemberRowMapper(),id);
+        return jdbcTemplate.query(sql, new Repository_Member.MemberRowMapper(), id);
     }
 
     public static List<Activity_Member> getActivity_Member(int currentId) {
@@ -47,6 +49,7 @@ public class Repository_Member {
     private static final class MemberRowMapper implements RowMapper<Member_Out> {
         private Long previousId = null;
         private List<Activity_Member> activity = new ArrayList<>();
+
         @Override
         public Member_Out mapRow(ResultSet rs, int rowNum) throws SQLException {
             int currentId = rs.getInt("id_client");
@@ -60,12 +63,20 @@ public class Repository_Member {
             return member;
         }
     }
+
     public static List<Activity_Member> addActivity(int currentId) {
         List<Activity_Member> ac = getActivity_Member(currentId);
         return ac;
     }
+
     public String member_insert(String name_member, String dni_member, String city_member, String calendary, int id_member) {
         String sql = "Select public.member_insert(?,?,?,?::jsonb,?)";
-        return jdbcTemplate.queryForObject(sql,String.class,name_member,dni_member,city_member,calendary,id_member);
+        return jdbcTemplate.queryForObject(sql, String.class, name_member, dni_member, city_member, calendary, id_member);
     }
+
+    public String member_delete(int id) {
+        String sql = "SELECT * FROM public.member_delete(?)";
+        return jdbcTemplate.queryForObject(sql, String.class, id);
+    }
+
 }

@@ -1,0 +1,30 @@
+Crear Activity
+URL http://localhost:8080/jacidi/create_activity
+Metodo:Post
+{
+            "name": "test5555551",
+            "scheduled": "2025-03-13",
+            "spaces_id": 2
+}
+
+Consulta un Activity
+http://localhost:8080/jacidi/activity/1
+Metodo:Get
+
+Consulta todos los Activity
+http://localhost:8080/jacidi/activitys
+Metodo:Get
+
+Eliminar Activity
+URL:http://localhost:8080/jacidi/activity_delete/1
+Metodo:Get
+
+Actualizar Activity
+Metodo Post
+URL:http://localhost:8080/jacidi/update_activity
+{
+            "id":13,
+            "name": "test5555551",
+            "scheduled": "2025-03-13",
+            "spaces_id": 2
+}

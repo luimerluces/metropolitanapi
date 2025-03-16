@@ -25,3 +25,7 @@ Metodo:Get
 Consulta todos los  Member
 URL:http://localhost:8080/jacidi/members
 Metodo:Get
+
+Eliminar  Member
+URL:http://localhost:8080/jacidi/member_delete/1
+Metodo:Get
