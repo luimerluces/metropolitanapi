@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -65,8 +64,8 @@ public class Repository_Member {
         List<Activity_Member> ac = getActivity_Member(currentId);
         return ac;
     }
-    public String member_insert(int id_member,String name_member,String dni_member, String city_member) {
-        String sql = "SELECT * FROM public.activity_insert(?,?,?,?)";
-        return jdbcTemplate.queryForObject(sql, String.class,id_member,name_member,dni_member,city_member);
+    public String member_insert(String name_member, String dni_member, String city_member, String calendary, int id_member) {
+        String sql = "Select public.member_insert(?,?,?,?::jsonb,?)";
+        return jdbcTemplate.queryForObject(sql,String.class,name_member,dni_member,city_member,calendary,id_member);
     }
 }

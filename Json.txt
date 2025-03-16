@@ -1,0 +1,27 @@
+Crear Member
+URL http://localhost:8080/jacidi/create_member
+Metodo:Post
+{
+            "id_member": 14,
+            "name_member": "Cole",
+            "dni_member": 1770770,
+            "city_member": "New Yrok",
+            "activity_Member": [
+                {
+                    "state": 2,
+                    "actividad_id": 2
+                },
+                {
+                    "state": 3,
+                    "actividad_id": 2
+                }
+            ]
+        }
+
+Consulta un Member
+URL:http://localhost:8080/jacidi/member/13
+Metodo:Get
+
+Consulta todos los  Member
+URL:http://localhost:8080/jacidi/members
+Metodo:Get

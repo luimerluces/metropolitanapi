@@ -28,8 +28,8 @@ public class Services_Member {
         return Flux.fromIterable(memberRepository.getMember(id));
     }
 
-    public String member_insert(int id_member,String name_member,String dni_member, String city_member) {
-        String insert = memberRepository.member_insert(id_member,name_member,dni_member,city_member);
+    public String member_insert(String name_member,String dni_member,String city_member,String calendary,int id_member) {
+        String insert = memberRepository.member_insert(name_member,dni_member,city_member,calendary,id_member);
         return insert;
     }
 

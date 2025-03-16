@@ -8,7 +8,7 @@ import lombok.ToString;
 @ToString
 public class Activity_Member {
     @Min(value = 1, message = "The value must be positive")
-    private int id_state;
+    private int state;
     @Min(value = 1, message = "The value must be positive")
-    private int id_activity;
+    private int actividad_id ;
 }
